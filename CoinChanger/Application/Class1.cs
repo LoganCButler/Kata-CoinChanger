@@ -15,6 +15,12 @@ namespace Application
         string changeAmoutString;
         int cents;
 
+        public string ChangeCheck(double input)
+        {
+            if (input < 0.01) { return "No Change"; }
+            else {return MakeChange(input); }
+        }
+
         public string MakeChange(double input)
         {
             

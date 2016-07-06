@@ -12,12 +12,19 @@ namespace Application
         int nickles;
         int dimes;
         int quarters;
-        public string changeAmoutString;
         int cents;
+        public string changeAmoutString;
+        
+
+        int pennieUnit = 1;
+        double pennieValue = 0.01;
+        int nickleUnit = 5;
+        int dimesUnit = 10;
+        int quarterUnit = 25;
 
         public string ChangeCheck(double input)
         {
-            if (input < 0.01) { return changeAmoutString = "No Change"; }
+            if (input < pennieValue) { return changeAmoutString = "No Change"; }
             else {return MakeChange(input); }
         }
 
@@ -35,37 +42,38 @@ namespace Application
 
         private void GetQuarters()
         {
-            for (var x = cents; x > 24; x -= 25)
+            for (var x = cents; x >= quarterUnit; x -= quarterUnit)
             {
                 quarters += 1;
-                cents -= 25;
+                cents -= quarterUnit;
             }
         }
 
         private void getDimes()
         {
-            for (var x = cents; x > 9; x -= 10)
+            for (var x = cents; x >= dimesUnit; x -= dimesUnit)
             {
                 dimes += 1;
-                cents -= 10;
+                cents -= dimesUnit;
             }
         }
 
         
         private void getNickles()
         {
-            for (var x = cents; x > 4; x -= 5)
+            for (var x = cents; x >= nickleUnit; x -= nickleUnit)
             {
                 nickles += 1;
-                cents -= 5;
+                cents -= nickleUnit;
             }
         }
 
         private void getPennies()
         {
-            for(var x = cents; x > 0; x--)
+            for(var x = cents; x >= pennieUnit; x-= pennieUnit)
             {
                 penies += 1;
+                cents -= pennieUnit;
             }
         }
 

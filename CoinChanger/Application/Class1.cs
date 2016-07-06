@@ -18,17 +18,32 @@ namespace Application
         public string MakeChange(double input)
         {
             
-            cents = Convert.ToInt32(input*100); 
-            getPennies();
+            cents = Convert.ToInt32(input*100);
+            getNickles();
+            getPennies();      
             makeChangeString();
             return changeAmoutString;
         }
+
+        
 
         private void makeChangeString()
         {
             if (penies > 0)
             {
-                changeAmoutString = "Pennies: " + penies.ToString();
+                changeAmoutString += "Pennies: " + penies.ToString();
+            }
+            if (nickles > 0)
+            {
+                changeAmoutString += "Nickles: " + nickles.ToString();
+            }
+        }
+        private void getNickles()
+        {
+            for (var x = cents; x > 4; x -= 5)
+            {
+                nickles += 1;
+                cents -= 5;
             }
         }
 
@@ -39,5 +54,6 @@ namespace Application
                 penies += 1;
             }
         }
+        
     }
 }

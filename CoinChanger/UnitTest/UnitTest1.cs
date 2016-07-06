@@ -18,6 +18,18 @@ namespace UnitTest
             Assert.AreEqual("Pennies: 1", output);
             
         }
+
+        [TestMethod]
+        public void OneNickle()
+        {
+            double input = 0.05;
+            CoinChanger c = new CoinChanger();
+
+            string output = c.MakeChange(input);
+
+            Assert.AreEqual("Nickles: 1", output);
+
+        }
     }
 
     [TestClass]

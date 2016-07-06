@@ -17,7 +17,7 @@ namespace Application
 
         public string ChangeCheck(double input)
         {
-            if (input < 0.01) { return "No Change"; }
+            if (input < 0.01) { return changeAmoutString = "No Change"; }
             else {return MakeChange(input); }
         }
 

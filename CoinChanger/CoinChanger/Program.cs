@@ -12,7 +12,7 @@ namespace CoinChanger
         static void Main(string[] args)
         {
             Application.CoinChanger c = new Application.CoinChanger();
-            Console.WriteLine("Please enter a monetary amount between $0.99 and $0.01");
+            Console.WriteLine("Please enter a monetary amount between $0.99 and $0.00");
             var hold = Convert.ToDouble(Console.ReadLine());
             c.ChangeCheck(hold);
             Console.WriteLine("The change is..." + c.changeAmoutString);

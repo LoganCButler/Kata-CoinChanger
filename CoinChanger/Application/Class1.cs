@@ -30,52 +30,24 @@ namespace Application
 
         public string MakeChange(double input)
         {
-            
             cents = Convert.ToInt32(input*100);
-            GetQuarters();
-            getDimes();
-            getNickles();
-            getPennies();      
+            CountCoins(ref quarters, quarterUnit);
+            CountCoins(ref dimes, dimesUnit);
+            CountCoins(ref nickles, nickleUnit);
+            CountCoins(ref penies, pennieUnit);     
             makeChangeString();
             return changeAmoutString;
         }
 
-        private void GetQuarters()
+        private void CountCoins(ref int coin, int coinUnit)
         {
-            for (var x = cents; x >= quarterUnit; x -= quarterUnit)
+            for (var x = cents; x >= coinUnit; x -= coinUnit)
             {
-                quarters += 1;
-                cents -= quarterUnit;
+                coin += 1;
+                cents -= coinUnit;
             }
         }
 
-        private void getDimes()
-        {
-            for (var x = cents; x >= dimesUnit; x -= dimesUnit)
-            {
-                dimes += 1;
-                cents -= dimesUnit;
-            }
-        }
-
-        
-        private void getNickles()
-        {
-            for (var x = cents; x >= nickleUnit; x -= nickleUnit)
-            {
-                nickles += 1;
-                cents -= nickleUnit;
-            }
-        }
-
-        private void getPennies()
-        {
-            for(var x = cents; x >= pennieUnit; x-= pennieUnit)
-            {
-                penies += 1;
-                cents -= pennieUnit;
-            }
-        }
 
         private void makeChangeString()
         {

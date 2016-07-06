@@ -19,26 +19,33 @@ namespace Application
         {
             
             cents = Convert.ToInt32(input*100);
+            GetQuarters();
+            getDimes();
             getNickles();
             getPennies();      
             makeChangeString();
             return changeAmoutString;
         }
 
-        
-
-        private void makeChangeString()
+        private void GetQuarters()
         {
-            if (nickles > 0)
+            for (var x = cents; x > 24; x -= 25)
             {
-                changeAmoutString += "Nickles: " + nickles.ToString() +" ";
+                quarters += 1;
+                cents -= 25;
             }
-            if (penies > 0)
-            {
-                changeAmoutString += "Pennies: " + penies.ToString() + " ";
-            }
-            
         }
+
+        private void getDimes()
+        {
+            for (var x = cents; x > 9; x -= 10)
+            {
+                dimes += 1;
+                cents -= 10;
+            }
+        }
+
+        
         private void getNickles()
         {
             for (var x = cents; x > 4; x -= 5)
@@ -55,6 +62,27 @@ namespace Application
                 penies += 1;
             }
         }
-        
+
+        private void makeChangeString()
+        {
+            if (quarters > 0)
+            {
+                changeAmoutString += "Quarters: " + quarters.ToString() + " ";
+            }
+            if (dimes > 0)
+            {
+                changeAmoutString += "Dimes: " + dimes.ToString() + " ";
+            }
+            if (nickles > 0)
+            {
+                changeAmoutString += "Nickles: " + nickles.ToString() + " ";
+            }
+            if (penies > 0)
+            {
+                changeAmoutString += "Pennies: " + penies.ToString() + " ";
+            }
+
+        }
+
     }
 }

@@ -16,7 +16,6 @@ namespace UnitTest
             string output = c.MakeChange(input);
 
             Assert.AreEqual("Pennies: 1 ", output);
-            
         }
 
         [TestMethod]
@@ -28,7 +27,28 @@ namespace UnitTest
             string output = c.MakeChange(input);
 
             Assert.AreEqual("Nickles: 1 ", output);
+        }
 
+        [TestMethod]
+        public void OneDime()
+        {
+            double input = 0.10;
+            CoinChanger c = new CoinChanger();
+
+            string output = c.MakeChange(input);
+
+            Assert.AreEqual("Dimes: 1 ", output);
+        }
+
+        [TestMethod]
+        public void OneQuarter()
+        {
+            double input = 0.25;
+            CoinChanger c = new CoinChanger();
+
+            string output = c.MakeChange(input);
+
+            Assert.AreEqual("Quarters: 1 ", output);
         }
     }
 

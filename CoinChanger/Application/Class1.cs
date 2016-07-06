@@ -12,7 +12,7 @@ namespace Application
         int nickles;
         int dimes;
         int quarters;
-        string changeAmoutString;
+        public string changeAmoutString;
         int cents;
 
         public string ChangeCheck(double input)

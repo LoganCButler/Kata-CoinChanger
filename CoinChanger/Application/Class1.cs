@@ -29,14 +29,15 @@ namespace Application
 
         private void makeChangeString()
         {
-            if (penies > 0)
-            {
-                changeAmoutString += "Pennies: " + penies.ToString();
-            }
             if (nickles > 0)
             {
-                changeAmoutString += "Nickles: " + nickles.ToString();
+                changeAmoutString += "Nickles: " + nickles.ToString() +" ";
             }
+            if (penies > 0)
+            {
+                changeAmoutString += "Pennies: " + penies.ToString() + " ";
+            }
+            
         }
         private void getNickles()
         {

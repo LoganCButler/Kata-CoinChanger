@@ -15,7 +15,7 @@ namespace UnitTest
 
             string output = c.MakeChange(input);
 
-            Assert.AreEqual("Pennies: 1", output);
+            Assert.AreEqual("Pennies: 1 ", output);
             
         }
 
@@ -27,7 +27,7 @@ namespace UnitTest
 
             string output = c.MakeChange(input);
 
-            Assert.AreEqual("Nickles: 1", output);
+            Assert.AreEqual("Nickles: 1 ", output);
 
         }
     }
@@ -43,7 +43,23 @@ namespace UnitTest
 
             string output = c.MakeChange(input);
 
-            Assert.AreEqual("Pennies: 3", output);
+            Assert.AreEqual("Pennies: 3 ", output);
+
+        }
+    }
+
+    [TestClass]
+    public class MultiplesWithDifferentCoins
+    {
+        [TestMethod]
+        public void SixCents()
+        {
+            double input = 0.06;
+            CoinChanger c = new CoinChanger();
+
+            string output = c.MakeChange(input);
+
+            Assert.AreEqual("Nickles: 1 Pennies: 1 ", output);
 
         }
     }

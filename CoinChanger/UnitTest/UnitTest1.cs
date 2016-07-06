@@ -15,7 +15,7 @@ namespace UnitTest
 
             string output = c.ChangeCheck(input);
 
-            Assert.AreEqual("Pennies: 1 ", output);
+            Assert.AreEqual("Pennies: 1\n", output);
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace UnitTest
 
             string output = c.ChangeCheck(input);
 
-            Assert.AreEqual("Nickles: 1 ", output);
+            Assert.AreEqual("Nickles: 1\n", output);
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace UnitTest
 
             string output = c.ChangeCheck(input);
 
-            Assert.AreEqual("Dimes: 1 ", output);
+            Assert.AreEqual("Dimes: 1\n", output);
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace UnitTest
 
             string output = c.ChangeCheck(input);
 
-            Assert.AreEqual("Quarters: 1 ", output);
+            Assert.AreEqual("Quarters: 1\n", output);
         }
     }
 
@@ -63,7 +63,7 @@ namespace UnitTest
 
             string output = c.ChangeCheck(input);
 
-            Assert.AreEqual("Pennies: 3 ", output);
+            Assert.AreEqual("Pennies: 3\n", output);
         }
 
         [TestMethod]
@@ -74,7 +74,7 @@ namespace UnitTest
 
             string output = c.ChangeCheck(input);
 
-            Assert.AreEqual("Dimes: 2 ", output);
+            Assert.AreEqual("Dimes: 2\n", output);
         }
 
         [TestMethod]
@@ -85,7 +85,7 @@ namespace UnitTest
 
             string output = c.ChangeCheck(input);
 
-            Assert.AreEqual("Quarters: 3 ", output);
+            Assert.AreEqual("Quarters: 3\n", output);
         }
     }
 
@@ -100,7 +100,7 @@ namespace UnitTest
 
             string output = c.ChangeCheck(input);
 
-            Assert.AreEqual("Nickles: 1 Pennies: 1 ", output);
+            Assert.AreEqual("Nickles: 1\nPennies: 1\n", output);
         }
 
         [TestMethod]
@@ -111,7 +111,7 @@ namespace UnitTest
 
             string output = c.ChangeCheck(input);
 
-            Assert.AreEqual("Quarters: 1 Dimes: 1 ", output);
+            Assert.AreEqual("Quarters: 1\nDimes: 1\n", output);
         }
 
         [TestMethod]
@@ -122,7 +122,7 @@ namespace UnitTest
 
             string output = c.ChangeCheck(input);
 
-            Assert.AreEqual("Dimes: 2 Pennies: 2 ", output);
+            Assert.AreEqual("Dimes: 2\nPennies: 2\n", output);
         }
 
         [TestMethod]
@@ -133,7 +133,7 @@ namespace UnitTest
 
             string output = c.ChangeCheck(input);
 
-            Assert.AreEqual("Quarters: 1 Dimes: 1 Nickles: 1 Pennies: 1 ", output);
+            Assert.AreEqual("Quarters: 1\nDimes: 1\nNickles: 1\nPennies: 1\n", output);
         }
     }
 

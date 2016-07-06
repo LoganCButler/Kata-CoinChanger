@@ -53,19 +53,19 @@ namespace Application
         {
             if (quarters > 0)
             {
-                changeAmoutString += "Quarters: " + quarters.ToString() + " ";
+                changeAmoutString += "Quarters: " + quarters.ToString() + "\n";
             }
             if (dimes > 0)
             {
-                changeAmoutString += "Dimes: " + dimes.ToString() + " ";
+                changeAmoutString += "Dimes: " + dimes.ToString() + "\n";
             }
             if (nickles > 0)
             {
-                changeAmoutString += "Nickles: " + nickles.ToString() + " ";
+                changeAmoutString += "Nickles: " + nickles.ToString() + "\n";
             }
             if (penies > 0)
             {
-                changeAmoutString += "Pennies: " + penies.ToString() + " ";
+                changeAmoutString += "Pennies: " + penies.ToString() + "\n";
             }
 
         }

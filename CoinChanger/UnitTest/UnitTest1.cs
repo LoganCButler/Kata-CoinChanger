@@ -19,4 +19,20 @@ namespace UnitTest
             
         }
     }
+
+    [TestClass]
+    public class MultipleOfSameCoin
+    {
+        [TestMethod]
+        public void MultiplePennies()
+        {
+            double input = 0.03;
+            CoinChanger c = new CoinChanger();
+
+            string output = c.MakeChange(input);
+
+            Assert.AreEqual("Pennies: 3", output);
+
+        }
+    }
 }

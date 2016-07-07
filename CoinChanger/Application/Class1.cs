@@ -8,19 +8,12 @@ namespace Application
 {
     public class CoinChanger
     {
-        int penies;
-        int nickles;
-        int dimes;
-        int quarters;
-        int cents;
-        public string changeAmoutString;
         
-
-        int pennieUnit = 1;
+        int cents;
         double pennieValue = 0.01;
-        int nickleUnit = 5;
-        int dimesUnit = 10;
-        int quarterUnit = 25;
+        public string changeAmoutString;
+        int [] changeArry = {0,0,0,0};
+        int[] coinUnitValue = {25, 10, 5, 1};
 
         public string ChangeCheck(double input)
         {
@@ -31,13 +24,16 @@ namespace Application
         public string MakeChange(double input)
         {
             cents = Convert.ToInt32(input*100);
-            CountCoins(ref quarters, quarterUnit);
-            CountCoins(ref dimes, dimesUnit);
-            CountCoins(ref nickles, nickleUnit);
-            CountCoins(ref penies, pennieUnit);     
+
+            for (var i = 0; i < changeArry.Length; i++)
+            {
+                CountCoins(ref changeArry[i], coinUnitValue[i]);
+            }   
+              
             makeChangeString();
             return changeAmoutString;
         }
+
 
         private void CountCoins(ref int coin, int coinUnit)
         {
@@ -51,21 +47,21 @@ namespace Application
 
         private void makeChangeString()
         {
-            if (quarters > 0)
+            if (changeArry[0] > 0)
             {
-                changeAmoutString += "Quarters: " + quarters.ToString() + "\n";
+                changeAmoutString += "Quarters: " + changeArry[0].ToString() + "\n";
             }
-            if (dimes > 0)
+            if (changeArry[1] > 0)
             {
-                changeAmoutString += "Dimes: " + dimes.ToString() + "\n";
+                changeAmoutString += "Dimes: " + changeArry[1].ToString() + "\n";
             }
-            if (nickles > 0)
+            if (changeArry[2] > 0)
             {
-                changeAmoutString += "Nickles: " + nickles.ToString() + "\n";
+                changeAmoutString += "Nickles: " + changeArry[2].ToString() + "\n";
             }
-            if (penies > 0)
+            if (changeArry[3] > 0)
             {
-                changeAmoutString += "Pennies: " + penies.ToString() + "\n";
+                changeAmoutString += "Pennies: " + changeArry[3].ToString() + "\n";
             }
 
         }

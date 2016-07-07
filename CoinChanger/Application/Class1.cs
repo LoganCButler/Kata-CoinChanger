@@ -38,9 +38,12 @@ namespace Application
             for (var i = 0; i < changeArry.Length; i++)
             {
                 CountCoins(ref changeArry[i], coinUnitValue[i]);
-            }   
-              
-            makeChangeString();
+            }
+
+            MakeChangeStringFunction(hasQuarters, "Quarters: ", changeArry[0]);
+            MakeChangeStringFunction(hasDimes, "Dimes: ", changeArry[1]);
+            MakeChangeStringFunction(hasNickles, "Nickles: ", changeArry[2]);
+            MakeChangeStringFunction(hasPennies, "Pennies: ", changeArry[3]);
             return changeAmoutString;
         }
 
@@ -70,27 +73,12 @@ namespace Application
             }
         }
 
-
-        private void makeChangeString()
+        private void MakeChangeStringFunction(bool hasCoin, string coin, int quantity)
         {
-            if (hasQuarters)
+            if (hasCoin)
             {
-                changeAmoutString += "Quarters: " + changeArry[0].ToString() + "\n";
+                changeAmoutString += coin + quantity + "\n";
             }
-            if (hasDimes)
-            {
-                changeAmoutString += "Dimes: " + changeArry[1].ToString() + "\n";
-            }
-            if (hasNickles)
-            {
-                changeAmoutString += "Nickles: " + changeArry[2].ToString() + "\n";
-            }
-            if (hasPennies)
-            {
-                changeAmoutString += "Pennies: " + changeArry[3].ToString() + "\n";
-            }
-
         }
-
     }
 }

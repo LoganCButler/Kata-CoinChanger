@@ -14,11 +14,21 @@ namespace Application
         public string changeAmoutString;
         int [] changeArry = {0,0,0,0};
         int[] coinUnitValue = {25, 10, 5, 1};
+        bool hasQuarters;
+        bool hasDimes;
+        bool hasNickles;
+        bool hasPennies;
 
         public string ChangeCheck(double input)
         {
-            if (input < pennieValue) { return changeAmoutString = "No Change"; }
-            else {return MakeChange(input); }
+            if (input < pennieValue)
+            {
+                return changeAmoutString = "No Change";
+            }
+            else
+            {
+                return MakeChange(input);
+            }
         }
 
         public string MakeChange(double input)
@@ -41,25 +51,41 @@ namespace Application
             {
                 coin += 1;
                 cents -= coinUnit;
+
+                switch (coinUnit)
+                {
+                    case 25:
+                        hasQuarters = true;
+                        break;
+                    case 10:
+                        hasDimes = true;
+                        break;
+                    case 5:
+                        hasNickles = true;
+                        break;
+                    case 1:
+                        hasPennies = true;
+                        break;
+                }
             }
         }
 
 
         private void makeChangeString()
         {
-            if (changeArry[0] > 0)
+            if (hasQuarters)
             {
                 changeAmoutString += "Quarters: " + changeArry[0].ToString() + "\n";
             }
-            if (changeArry[1] > 0)
+            if (hasDimes)
             {
                 changeAmoutString += "Dimes: " + changeArry[1].ToString() + "\n";
             }
-            if (changeArry[2] > 0)
+            if (hasNickles)
             {
                 changeAmoutString += "Nickles: " + changeArry[2].ToString() + "\n";
             }
-            if (changeArry[3] > 0)
+            if (hasPennies)
             {
                 changeAmoutString += "Pennies: " + changeArry[3].ToString() + "\n";
             }
